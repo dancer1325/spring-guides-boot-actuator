@@ -60,20 +60,21 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 ** `./gradlew clean build`
 ** `java -jar build/libs/actuator-service-0.0.1-SNAPSHOT.jar`
 *** In logs, you can see -- ' Exposing 1 endpoint(s) beneath base path '/actuator' ' -- that /actuator endpoint is exposed
-* `curl localhost:8080`
-** server is running but no business endpoints defined yet
-** output is a generic JSON response from the Actuator `/error` endpoint
-*** if you `curl localhost:8080/actuator/error`-> you get the same output
+* You can call to
+** link:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints[actuator's built-in endpoints]
+*** most of them are not defined
+**** `curl localhost:8080/actuator/auditevents` or
+**** `curl localhost:8080/actuator/beans`
+**** ..
+*** some of them yes
+**** `curl localhost:8080/actuator/health`
+** `curl localhost:8080`
+*** server is running but no business endpoints defined yet
+*** output is a generic JSON response from the Actuator `/error` endpoint
+**** if you `curl localhost:8080/actuator/error`-> you get the same output
 ----
 {"timestamp":1384788106983,"error":"Not Found","status":404,"message":""}
 ----
-* You can call to link:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints[actuator's built-in endpoints]
-** most of them are not defined
-*** `curl localhost:8080/actuator/auditevents` or
-*** `curl localhost:8080/actuator/beans`
-*** ..
-** some of them yes
-*** `curl localhost:8080/actuator/health`
 
 === Complete
 * Endpoint '/hello-world' defined
