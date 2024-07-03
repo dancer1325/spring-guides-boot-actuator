@@ -1,0 +1,11 @@
+### GET  /actuator
+GET {{host}}/actuator
+
+### GET  /actuator/health
+GET {{host}}/actuator/health
+
+### GET  /actuator/env
+GET {{host}}/actuator/env
+
+### GET  /actuator/configprops
+GET {{host}}/actuator/configprops
